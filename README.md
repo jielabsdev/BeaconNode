@@ -1,8 +1,6 @@
 # BeaconNode
 
-<p align="center">
-  <img src="docs/logo.png" alt="beaconnode_logo.png" width="200"/>
-</p>
+<img src="docs/beaconnode_logo.png" alt="Subiectus Logo" width="600px">
 
 BeaconNode is a high-performance, decentralized **Agent Resource Discovery (ARD)** engine designed for multi-agent systems. It pairs a C++20 background engine with a lightweight Python SDK, allowing AI agents to announce capabilities, discover peers, and converge on a shared registry without managing complex P2P protocol logic.
 
