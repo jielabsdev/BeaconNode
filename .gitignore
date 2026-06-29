@@ -1,0 +1,43 @@
+# --- Existing Project Patterns ---
+build/
+out/
+.cache/
+.vs/
+.vscode/
+*.user
+*.suo
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+dist/
+*.egg-info/
+.beaconnode/
+
+# --- Build System & Artifacts ---
+build-msys/
+
+# --- Security & Persistence Cleanup ---
+# Keys and credentials
+*.key
+identity.key
+
+# Persistence layer artifacts
+*.log
+*.bin
+registry.wal
+registry.snapshot
+
+# OS/Editor Meta
+.DS_Store

@@ -1,0 +1,25 @@
+[node]
+node_id = "dev-node-1"
+listen_host = "0.0.0.0"
+listen_port = 43170
+control_host = "127.0.0.1"
+control_port = 43171
+
+[gossip]
+interval_ms = 5000
+fanout = 4
+max_registry_items_per_round = 256
+
+[lifecycle]
+heartbeat_ttl_ms = 30000
+purge_interval_ms = 10000
+
+[trust]
+malformed_threshold = 5
+rate_limit_per_minute = 120
+require_signatures = false
+
+[[bootstrap.peers]]
+peer_id = "bootstrap-local"
+host = "127.0.0.1"
+port = 43170

@@ -1,0 +1,21 @@
+[node]
+node_id = "relay-us-east-1"
+listen_host = "0.0.0.0"
+listen_port = 43270
+control_host = "127.0.0.1"
+control_port = 43271
+
+[gossip]
+interval_ms = 3000
+fanout = 8
+max_registry_items_per_round = 1024
+
+[lifecycle]
+heartbeat_ttl_ms = 45000
+purge_interval_ms = 5000
+
+[trust]
+malformed_threshold = 3
+rate_limit_per_minute = 60
+require_signatures = true
+

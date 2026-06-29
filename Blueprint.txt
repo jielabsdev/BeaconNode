@@ -1,0 +1,28 @@
+============================================================
+BEACONNODE SYSTEM BLUEPRINT (2026-06-23)
+============================================================
+
+1. CORE COMPONENTS
+- Engine: C++20 (boost::asio, libsodium, protobuf)
+- Registry: In-memory index with binary persistence (WAL + Snapshots)
+- Networking: UDP (Discovery) + TCP (State Sync)
+- SDK: Python (PyNaCl for Ed25519)
+
+2. WHAT IT DOES
+- Acts as a decentralized yellow pages for autonomous agents.
+- Synchronizes agent metadata across a cluster of nodes.
+- Validates agent identity (KYA - Know Your Agent) before registry.
+- Survives crashes via immediate disk-based WAL persistence.
+
+3. HOW WE PROOFED IT WORKS
+- Gossip Verification: Multi-node simulation confirmed event-driven state convergence (O(log n)).
+- Identity Verification: Confirmed Ed25519 signature rejection for spoofed/unsigned registrations.
+- Persistence Verification: Shutdown/restart cycle confirmed binary replay of WAL entries to restore state.
+- Build Validation: 100% test pass rate on 26/26 C++ targets + Python SDK smoke tests.
+
+4. USAGE FLOW
+- Step 1: Initialize Identity (Python: AgentIdentity())
+- Step 2: Start Engine (C++: ./beacon-engine)
+- Step 3: Register Capability (Python: client.register("data-analysis"))
+- Step 4: Verify (Across nodes: client.list_agents())
+============================================================

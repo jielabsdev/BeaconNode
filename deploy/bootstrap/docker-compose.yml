@@ -1,0 +1,31 @@
+services:
+  bootstrap:
+    image: beaconnode/beacon-engine:latest
+    command:
+      - "--config"
+      - "/etc/beaconnode/bootstrap-node.toml"
+    ports:
+      - "43170:43170/udp"
+      - "43170:43170/tcp"
+    volumes:
+      - "./bootstrap-node.toml:/etc/beaconnode/bootstrap-node.toml:ro"
+      - "bootstrap-identity:/var/lib/beaconnode"
+    restart: unless-stopped
+
+  relay:
+    image: beaconnode/beacon-engine:latest
+    command:
+      - "--config"
+      - "/etc/beaconnode/relay-node.toml"
+    ports:
+      - "43270:43270/udp"
+      - "43270:43270/tcp"
+    volumes:
+      - "./relay-node.toml:/etc/beaconnode/relay-node.toml:ro"
+      - "relay-identity:/var/lib/beaconnode"
+    restart: unless-stopped
+
+volumes:
+  bootstrap-identity:
+  relay-identity:
+

@@ -1,0 +1,12 @@
+{
+  "name": "beaconnode",
+  "version-string": "0.1.0",
+  "description": "High-performance P2P discovery service for AI agents",
+  "dependencies": [
+    "boost-asio",
+    "protobuf",
+    "pybind11",
+    "libsodium"
+  ]
+}
+

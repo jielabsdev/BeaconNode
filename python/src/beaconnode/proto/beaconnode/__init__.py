@@ -1,0 +1,2 @@
+"""BeaconNode protobuf namespace."""
+

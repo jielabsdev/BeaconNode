@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package beaconnode.v1;
+
+message RegistryEntry {
+    string agent_id = 1;
+    string capability = 2;
+    string endpoint = 3;
+    uint64 timestamp = 4;
+    bytes public_key = 5;
+    bytes signature = 6;
+}
+
+message GossipMessage {
+    string sender_id = 1;
+    repeated RegistryEntry entries = 2;
+    uint64 nonce = 3;
+}
